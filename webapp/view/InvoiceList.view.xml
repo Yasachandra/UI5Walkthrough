@@ -6,9 +6,17 @@
     <List
         class="sapUiResponsiveMargin"
         headerText="{i18n>invoiceListTitle}"
+        id="invoiceList"
         items="{invoice>/Invoices}"
         width="auto"
     >
+        <headerToolbar>
+            <Toolbar>
+                <Title text="{i18n>invoiceListTitle}" />
+                <ToolbarSpacer />
+                <SearchField width="50%" search=".onFilterInvoices" />
+            </Toolbar>
+        </headerToolbar>
         <items>
             <ObjectListItem
                 title="{invoice>Quantity} x {invoice>ProductName}"
