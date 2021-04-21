@@ -9,7 +9,7 @@ sap.ui.define([
             manifest: "json"
         },
         init: function () {
-            // call the init function of the parent
+            // Call the init function of the parent
             UIComponent.prototype.init.apply(this, arguments);
             // Set data models
             const oData = {
@@ -20,8 +20,11 @@ sap.ui.define([
             const oModel = new JSONModel(oData);
             this.setModel(oModel);
 
-            // set dialog
+            // Set dialog
             this._helloDialog = new HelloDialog(this.getRootControl());
+
+            // Create the views based on url/hash
+            this.getRouter().initialize();
         },
 
         exit: function () {
